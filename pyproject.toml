@@ -1,0 +1,43 @@
+[project]
+name = "tolerance"
+version = "0.0.1"
+description = "Квалитеты точности и поля допусков по ГОСТ 25346-2013"
+authors = [
+    {name = "Andrey Nikolaevich Korenyuk",email = "korenyuk.a.n@mail.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+]
+
+[tool.poetry.group.dev.dependencies]
+black = "25.1.0"
+isort = "6.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+skip-string-normalization = true
+extend-exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 120
